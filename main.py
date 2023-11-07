@@ -53,7 +53,7 @@ def main():
     geckodriver_path = '/usr/local/bin/geckodriver'  # Replace with the actual path to geckodriver
 
     firefox_options = webdriver.FirefoxOptions()
-    firefox_options.headless = True
+    firefox_options.add_argument("--headless")
     firefox_options.set_preference("media.volume_scale", "0.0")  # Mute audio
     firefox_options.set_preference("intl.accept_languages", "en-US")  # Set language to English
     firefox_options.set_preference("dom.webdriver.enabled", False)  # Disable webdriver detection
