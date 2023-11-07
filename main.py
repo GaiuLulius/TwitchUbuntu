@@ -59,7 +59,7 @@ def main():
     firefox_options.set_preference("dom.webdriver.enabled", False)  # Disable webdriver detection
 
     firefox_service = FirefoxService(geckodriver_path)
-    driver = webdriver.Firefox(service=FirefoxService)
+    driver = webdriver.Firefox(service=firefox_service, options=firefox_options)
 
     counter = 0  # Counter variable to keep track of the number of drivers created
 
