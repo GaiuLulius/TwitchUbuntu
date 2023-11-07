@@ -75,7 +75,7 @@ def main():
             # Wait for the element to be present before proceeding
             element_xpath = "//div[@data-a-target='player-overlay-click-handler']"
             wait = WebDriverWait(driver, 30)  # Adjust the timeout as needed
-            element = wait.until(EC.presence_of_element_located((By.XPATH, element_xpath))
+            element = wait.until(EC.presence_of_element_located((By.XPATH, element_xpath)))
 
             # Continue with your actions on the element
             actions = ActionChains(driver)
