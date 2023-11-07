@@ -50,7 +50,7 @@ def main():
     print("Creating virtual viewers now... Please wait.")
     
     # Set the path to the geckodriver executable (download geckodriver from Mozilla's website)
-    geckodriver_path = '/path/to/geckodriver'  # Replace with the actual path to geckodriver
+    geckodriver_path = '/usr/local/bin/geckodriver'  # Replace with the actual path to geckodriver
 
     firefox_options = webdriver.FirefoxOptions()
     firefox_options.headless = True
@@ -58,7 +58,8 @@ def main():
     firefox_options.set_preference("intl.accept_languages", "en-US")  # Set language to English
     firefox_options.set_preference("dom.webdriver.enabled", False)  # Disable webdriver detection
 
-    driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
+    firefox_service = FirefoxService(geckodriver_path)
+    driver = webdriver.Firefox(service=FirefoxService)
 
     counter = 0  # Counter variable to keep track of the number of drivers created
 
