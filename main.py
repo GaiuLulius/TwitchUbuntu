@@ -1,6 +1,8 @@
 import requests
 import warnings
 from selenium import webdriver
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from webdriver_manager.firefox import GeckoDriverManager
 from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -57,7 +59,7 @@ def main():
     firefox_options.set_preference("intl.accept_languages", "en-US")  # Set language to English
     firefox_options.set_preference("dom.webdriver.enabled", False)  # Disable webdriver detection
 
-    driver = webdriver.Firefox(options=firefox_options)
+    driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 
     counter = 0  # Counter variable to keep track of the number of drivers created
 
