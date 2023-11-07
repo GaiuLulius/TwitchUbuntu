@@ -50,6 +50,7 @@ def main():
     # Set the path to the geckodriver executable (download geckodriver from Mozilla's website)
     geckodriver_path = '/path/to/geckodriver'  # Replace with the actual path to geckodriver
 
+    firefox_options = Options()
     firefox_options = webdriver.FirefoxOptions()
     firefox_options.headless = True
     firefox_options.set_preference("media.volume_scale", "0.0")  # Mute audio
